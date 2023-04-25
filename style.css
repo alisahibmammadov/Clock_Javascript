@@ -1,0 +1,116 @@
+*, *::after,*::before{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background: url(https://source.unsplash.com/random/rolex) no-repeat;
+    background-size: cover;
+}
+.clock{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background: url(https://source.unsplash.com/random) no-repeat;
+    background-size: cover;
+}
+.clock .number{
+    --rotation: 0;
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    border-radius: 50%;
+    border: 1px solid rgba(91,122,124, .5);
+    box-shadow: 0 10px 30px rgb(91,122,124),
+    inset 0 10px 10px rgb(91,122,124);
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 3rem;
+}
+.clock .number1{
+    --rotation: 30deg;
+}
+.clock .number2{
+    --rotation: 60deg;
+}
+.clock .number3{
+    --rotation: 90deg;
+}
+.clock .number4{
+    --rotation: 120deg;
+}
+.clock .number5{
+    --rotation: 150deg;
+}
+.clock .number6{
+    --rotation: 180deg;
+}
+.clock .number7{
+    --rotation: 210deg;
+}
+.clock .number8{
+    --rotation: 240deg;
+}
+.clock .number9{
+    --rotation: 270deg;
+}
+.clock .number10{
+    --rotation: 300deg;
+}
+.clock .number11{
+    --rotation: 330deg;
+}
+.clock .number12{
+    --rotation: 360deg;
+}
+.clock .hand{
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background: #000;
+    border: 1px solid #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+.clock::after{
+    content: '';
+    position: absolute;
+    background: #000;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+.clock .hand.second{
+    width: 3px;
+    height: 45%;
+    background: red;
+    border: none;
+}
+.clock .hand.minute{
+    width: 5px;
+    height: 40%;
+    background: green;
+    border: none;
+}
+.clock .hand.hour{
+    width: 8px;
+    height: 30%;
+    background: #000;
+    border: none;
+}
